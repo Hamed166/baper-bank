@@ -1,13 +1,18 @@
 
-
-
-
-
-document.getElementById('deposit-button').addEventListener('click', function(){
+function getTotalInput (){
     const depositAmount = document.getElementById('deposit-input');
     const depositInput = depositAmount.value;
     const newDepositInput = parseFloat(depositInput);
     depositAmount.value = '';
+    return newDepositInput;
+}
+
+
+
+document.getElementById('deposit-button').addEventListener('click', function(){
+    
+ const newDepositInput = getTotalInput();
+
 
     const depositTotal = document.getElementById('totalDeposit');
     const currentDepositTotal= depositTotal.innerText;
